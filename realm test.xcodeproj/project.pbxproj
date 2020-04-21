@@ -108,14 +108,13 @@
 		768D6B5C244A826F00FA37E0 /* realm test */ = {
 			isa = PBXGroup;
 			children = (
-				76D03018244E8138000D4EB8 /* Realm */,
-				76D03013244E798C000D4EB8 /* Model */,
 				768D6B5D244A826F00FA37E0 /* AppDelegate.swift */,
 				768D6B5F244A826F00FA37E0 /* SceneDelegate.swift */,
+				76D03018244E8138000D4EB8 /* Realm */,
+				76D0301E244F61AB000D4EB8 /* View */,
+				76D03013244E798C000D4EB8 /* Model */,
 				76D0301B244E8E3B000D4EB8 /* Controller */,
-				768D6B63244A826F00FA37E0 /* Main.storyboard */,
 				768D6B66244A827100FA37E0 /* Assets.xcassets */,
-				768D6B68244A827100FA37E0 /* LaunchScreen.storyboard */,
 				768D6B6B244A827100FA37E0 /* Info.plist */,
 			);
 			path = "realm test";
@@ -154,6 +153,15 @@
 				76D0301C244E8E7F000D4EB8 /* ItemsTableViewController.swift */,
 			);
 			path = Controller;
+			sourceTree = "<group>";
+		};
+		76D0301E244F61AB000D4EB8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				768D6B63244A826F00FA37E0 /* Main.storyboard */,
+				768D6B68244A827100FA37E0 /* LaunchScreen.storyboard */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		E4A2126073BB990F5EC1CCD4 /* Pods */ = {
