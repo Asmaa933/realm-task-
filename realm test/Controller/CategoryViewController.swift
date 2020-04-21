@@ -31,8 +31,10 @@ class CategoryViewController: UIViewController {
             guard let text = textField.text else {return}
             let newCategory = Category()
             newCategory.name = text
-            RealmHandler.instance.saveCatIntoRealm(category: newCategory)
-            self.tableView.reloadData()
+            if(!text.isEmpty){
+                RealmHandler.instance.saveCatIntoRealm(category: newCategory)
+                self.tableView.reloadData()
+            }
         }
         alert.addAction(action)
         alert.addTextField { (field) in
@@ -58,7 +60,7 @@ extension CategoryViewController: UITableViewDelegate,UITableViewDataSource{
         performSegue(withIdentifier: "detailSegue", sender: nil)
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-       guard let destination = segue.destination as? ItemsTableViewController else {return}
+        guard let destination = segue.destination as? ItemsTableViewController else {return}
         guard let indexPath = tableView.indexPathForSelectedRow else {return}
         destination.selectedCategory = categories?[indexPath.row]
         

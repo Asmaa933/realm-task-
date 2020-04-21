@@ -35,10 +35,14 @@ class ItemsTableViewController: UITableViewController {
             guard let self = self else {return}
             guard let currentCategory = self.selectedCategory else {return}
             let newItem = Item()
-            newItem.title = textField.text ?? ""
+            guard let text = textField.text else {return}
+            newItem.title = text
             newItem.dateCreated = Date()
-            RealmHandler.instance.saveItemsIntoRealm(currentCategory: currentCategory, item: newItem)
-            self.tableView.reloadData()
+            if(!text.isEmpty){
+                
+                RealmHandler.instance.saveItemsIntoRealm(currentCategory: currentCategory, item: newItem)
+                self.tableView.reloadData()
+            }
         }
         alert.addAction(action)
         alert.addTextField { (field) in
@@ -100,6 +104,6 @@ extension ItemsTableViewController: UISearchBarDelegate{
         tableView.reloadData()
         
     }
-  
+    
     
 }
